@@ -33,6 +33,11 @@ FROM A WHERE SR = 1
 )
 SELECT * FROM B WHERE OUT_CT IS NOT NULL;
 
+
+******************************************************************************************************************************************************
+MAIN QUERY
+
+
 WITH A AS (
 SELECT *,
 RANK() OVER (PARTITION BY ISU,START_DATE ORDER BY END_DATE DESC) AS SR,
